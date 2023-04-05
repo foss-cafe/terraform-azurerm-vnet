@@ -4,7 +4,20 @@
 ## How to use this module
 
 ```
+module "vnet" {
+  source  = "foss-cafe/vnet/azurerm"
+  version = "1.0.0"
+  resource_group_name = "terraform-test"
+  location            = "East US"
 
+  create_vnet   = true
+  name          = "terraform-test"
+  address_space = ["10.0.0.0/16"]
+
+  tags = {
+    environment = "test"
+  }
+}
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
